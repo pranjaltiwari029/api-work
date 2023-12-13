@@ -4,10 +4,10 @@
 const container = document.querySelector(".container");
 const optionsContainer = document.querySelector(".options-container");
 // "in" stands for India
-const country = "in";
+const country = ["in","us","uk"];
 const options = [
 
-  "sports",
+  " View ",
   
 ];
 
@@ -53,7 +53,11 @@ const selectCategory = (e, category) => {
   options.forEach((element) => {
     element.classList.remove("active");
   });
-  requestURL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`;
+  // requestURL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`;
+  // requestURL=`https://newsapi.org/v2/everything?q=football?country=us&apiKey=c806d341e2334364bdb01af6e48cfdf9`
+  // requestURL = `https://newsapi.org/v2/everything?domains=bbc.com&category=football&apiKey=${apiKey}`;
+  // requestURL = `https://newsapi.org/v2/top-headlines?country=in&category=football&apiKey=c806d341e2334364bdb01af6e48cfdf9`;
+  requestURL = `https://newsapi.org/v2/everything?q=football&apiKey=c806d341e2334364bdb01af6e48cfdf9`;
   e.target.classList.add("active");
   getNews();
 };
